@@ -1,0 +1,32 @@
+@use './../../../../variables.scss' as vars;
+
+.language-selector {
+  display: inline-block;
+  width: auto;
+
+  select {
+    appearance: auto;
+    -webkit-appearance: auto;
+    -moz-appearance: auto;
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 8px 12px 8px 12px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s, border-color 0.3s;
+
+    &:hover {
+      background-color: #222;
+      border-color: #777;
+    }
+
+    &:focus {
+      border-color: vars.$primary-color;
+      box-shadow: 0 0 5px vars.$primary-color;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@use './../../../../../variables.scss' as vars;
+
+.pet-list-container {
+  margin: 20px auto;
+  max-width: 1000px;
+  padding: 10px;
+  background-color: vars.$background-color;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+  }
+
+  mat-spinner {
+    width: 50px;
+    height: 50px;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 15px;
+
+    button {
+      background-color: vars.$primary-color;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      font-size: 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: vars.$primary-color-hover;
+      }
+
+      &:disabled {
+        background-color: #d3d3d3;
+        cursor: not-allowed;
+      }
+    }
+
+    span {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: vars.$text-color;
+    }
+  }
+}

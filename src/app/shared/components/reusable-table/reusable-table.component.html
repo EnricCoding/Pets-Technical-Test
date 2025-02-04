@@ -1,0 +1,43 @@
+<div class="table-container">
+  <table class="table" *ngIf="data && data.length > 0; else noData">
+    <thead>
+      <tr>
+        <th
+          *ngFor="let column of columns"
+          (click)="onSort(column.key)"
+        >
+          {{ column.translationKey | translate }}
+          <span *ngIf="sortKey === column.key">
+            {{ isAscending ? "▲" : "▼" }}
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of data; trackBy: trackByFn" (click)="onRowClick(row)">
+        <td *ngFor="let column of columns">
+          <ng-container *ngIf="column.isImage; else textContent">
+            <img
+              [src]="row[column.key]"
+              loading="lazy"
+              [alt]="row['name'] || 'Image'"
+              (error)="handleImageError($event)"
+              class="table-image"
+            />
+          </ng-container>
+          <ng-template #textContent>
+            <ng-container >
+              {{ row[column.key] }}
+            </ng-container>
+          </ng-template>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noData>
+    <div class="no-data-message">
+      <p>{{ "shared.noDataFound" | translate }}</p>
+    </div>
+  </ng-template>
+</div>

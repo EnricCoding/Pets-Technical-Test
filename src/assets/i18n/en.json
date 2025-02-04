@@ -1,0 +1,56 @@
+{
+    "petList": {
+        "header": "Pet List",
+        "table": {
+          "thumbnail": "Thumbnail",
+          "name": "Name",
+          "kind": "Kind",
+          "weight": "Weight (g)",
+          "height": "Height (cm)",
+          "length": "Length (cm)",
+          "seeDetails": "See Details"
+        },
+        "previous": "Previous",
+        "next": "Next",
+        "page": "Page {{currentPage}}",
+        "error": "Error fetching pets. Please try again."
+      },
+
+    "petOfTheDay": {
+        "generate": "Generate Pet of the Day",
+        "header": "Pet of the Day",
+        "kind": "Kind",
+        "weight": "Weight (g)",
+        "height": "Height (cm)",
+        "length": "Length (cm)",
+        "timeLeft": "Time left to choose another pet: {{timeLeft}}",
+        "noPets": "No pets available to select as Pet of the Day",
+        "errorFetchingPets": "Error fetching pets. Please try again later."
+    },
+
+    "petDetails": {
+      "notFound": {
+        "title": "Pet Not Found",
+        "description": "We couldn't find the pet you're looking for. Please try again later.",
+        "goBack": "Go Back"
+      },
+      "subtitle": "Discover more about our amazing Test Pets®",
+      "kind": "Kind",
+      "weight": "Weight",
+      "height": "Height",
+      "length": "Length",
+      "description": "Description",
+      "numberOfLives": "Number of Lives",
+      "healthStatus": "Health Status",
+      "footer": "Proudly brought to you by Test Pets®",
+      "errorLoadingDetails": "Failed to load pet details. Please try again later.",
+      "invalidId": "Invalid pet ID provided. Redirecting to the home page."
+    },
+
+    "shared": {
+        "loading": "Loading...",
+        "error": "Error fetching data. Please try again.",
+        "noDataFound": "No data found. Please try again later."
+    }
+
+}

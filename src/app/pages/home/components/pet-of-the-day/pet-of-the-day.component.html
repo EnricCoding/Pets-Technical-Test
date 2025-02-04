@@ -1,0 +1,23 @@
+<div class="pet-of-the-day">
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="generatePetOfTheDay()"
+    *ngIf="!(petOfTheDay$ | async)"
+  >
+    {{ 'petOfTheDay.generate' | translate }}
+  </button>
+
+  <div *ngIf="petOfTheDay$ | async as petOfTheDay">
+    <h3>{{ 'petOfTheDay.header' | translate }}: {{ petOfTheDay.name }}</h3>
+    <p><strong>{{ 'petOfTheDay.kind' | translate }}:</strong> {{ petOfTheDay.kind }}</p>
+    <p><strong>{{ 'petOfTheDay.weight' | translate }}:</strong> {{ petOfTheDay.weight }} g</p>
+    <p><strong>{{ 'petOfTheDay.height' | translate }}:</strong> {{ petOfTheDay.height }} cm</p>
+    <p><strong>{{ 'petOfTheDay.length' | translate }}:</strong> {{ petOfTheDay.length }} cm</p>
+    <img [src]="petOfTheDay.photo_url" [alt]="petOfTheDay.name" />
+
+    <p class="time-left">
+      {{ 'petOfTheDay.timeLeft' | translate: { timeLeft: (timeLeft$ | async) } }}
+    </p>
+  </div>
+</div>

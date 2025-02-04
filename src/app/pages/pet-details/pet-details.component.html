@@ -1,0 +1,60 @@
+<div class="pet-card">
+  <button mat-icon-button class="back-button" (click)="goBack()">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+
+  <ng-container *ngIf="isLoading$ | async; else loaded">
+    <div class="loading">
+      <mat-spinner></mat-spinner>
+    </div>
+  </ng-container>
+
+  <ng-template #loaded>
+    <ng-container *ngIf="pet$ | async as pet; else error">
+      <div class="card-header">
+        <h1>{{ pet.name }}</h1>
+        <p class="subtitle">{{ "petDetails.subtitle" | translate }}</p>
+      </div>
+
+      <div class="card-content">
+        <div class="image-container">
+          <img 
+            [src]="pet.photo_url"
+            [alt]="pet.name"
+            class="pet-photo"
+            (error)="handleImageError($event)"
+          />
+        </div>
+        <div class="info">
+          <p><span class="label">{{ "petDetails.kind" | translate }}:</span> {{ pet.kind }}</p>
+          <p><span class="label">{{ "petDetails.weight" | translate }}:</span> {{ pet.weight }} g</p>
+          <p><span class="label">{{ "petDetails.height" | translate }}:</span> {{ pet.height }} cm</p>
+          <p><span class="label">{{ "petDetails.length" | translate }}:</span> {{ pet.length }} cm</p>
+          <p><span class="label">{{ "petDetails.description" | translate }}:</span> {{ pet.description }}</p>
+          <p *ngIf="pet.number_of_lives !== undefined">
+            <span class="label">{{ "petDetails.numberOfLives" | translate }}:</span>
+            {{ pet.number_of_lives }}
+          </p>
+          <p *ngIf="pet.healthStatus">
+            <span class="label">{{ "petDetails.healthStatus" | translate }}:</span>
+            {{ pet.healthStatus | titlecase }}
+          </p>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-template #error>
+      <div class="error-message">
+        <h2>{{ "petDetails.notFound.title" | translate }}</h2>
+        <p>{{ "petDetails.notFound.description" | translate }}</p>
+        <button mat-raised-button color="primary" (click)="goBack()">
+          {{ "petDetails.notFound.goBack" | translate }}
+        </button>
+      </div>
+    </ng-template>
+  </ng-template>
+
+  <div class="card-footer">
+    <p class="footer-text">{{ "petDetails.footer" | translate }}</p>
+  </div>
+</div>

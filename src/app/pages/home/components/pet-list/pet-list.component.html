@@ -1,0 +1,40 @@
+<div class="pet-list-container">
+  <ng-container *ngIf="!(isLoading$ | async); else loadingSpinner">
+    <div class="table-container">
+      <app-reusable-table
+        [data]="pets"
+        [columns]="columns"
+        [sortKey]="sortKey"
+        [isAscending]="isAscending"
+        [allowedSortKeys]="allowedSortKeys"
+        [trackByFn]="trackByPetId"
+        (sort)="onSort($event)"
+        (rowClick)="navigateToDetails($event)"
+      ></app-reusable-table>
+    </div>
+
+    <div class="pagination">
+      <button
+        mat-button
+        [disabled]="currentPage === 1"
+        (click)="onPageChange(currentPage - 1)"
+      >
+        {{ 'petList.previous' | translate }}
+      </button>
+      <span>{{ 'petList.page' | translate: { currentPage: currentPage } }}</span>
+      <button
+        mat-button
+        [disabled]="pets.length < itemsPerPage"
+        (click)="onPageChange(currentPage + 1)"
+      >
+        {{ 'petList.next' | translate }}
+      </button>
+    </div>
+  </ng-container>
+
+  <ng-template #loadingSpinner>
+    <div class="loading">
+      <mat-spinner color="primary"></mat-spinner>
+    </div>
+  </ng-template>
+</div>

@@ -1,0 +1,55 @@
+{
+    "petList": {
+        "header": "Lista de Mascotas",
+        "table": {
+          "thumbnail": "Miniatura",
+          "name": "Nombre",
+          "kind": "Tipo",
+          "weight": "Peso (g)",
+          "height": "Altura (cm)",
+          "length": "Longitud (cm)",
+          "seeDetails": "Ver Detalles"
+        },
+        "previous": "Anterior",
+        "next": "Siguiente",
+        "page": "Página {{currentPage}}",
+        "error": "Error al obtener las mascotas. Por favor, inténtelo de nuevo."
+      },
+
+    "petOfTheDay": {
+        "generate": "Generar Mascota del Día",
+        "header": "Mascota del Día",
+        "kind": "Tipo",
+        "weight": "Peso (g)",
+        "height": "Altura (cm)",
+        "length": "Longitud (cm)",
+        "timeLeft": "Tiempo restante para elegir otra mascota: {{timeLeft}}",
+        "noPets": "No hay mascotas disponibles para seleccionar como la mascota del día.",
+        "errorFetchingPets": "Error al obtener las mascotas. Por favor, inténtalo de nuevo más tarde."
+    },
+
+    "petDetails": {
+      "notFound": {
+        "title": "Mascota no encontrada",
+        "description": "No pudimos encontrar la mascota que buscas. Por favor, inténtalo más tarde.",
+        "goBack": "Regresar"
+      },
+      "subtitle": "Descubre más sobre nuestras increíbles Test Pets®",
+      "kind": "Tipo",
+      "weight": "Peso",
+      "height": "Altura",
+      "length": "Longitud",
+      "description": "Descripción",
+      "numberOfLives": "Número de vidas",
+      "healthStatus": "Estado de salud",
+      "footer": "Orgullosamente presentado por Test Pets®",
+      "errorLoadingDetails": "No se pudieron cargar los detalles de la mascota. Por favor, inténtalo de nuevo más tarde.",
+      "invalidId": "ID de mascota inválido proporcionado. Redirigiendo a la página de inicio."
+    },
+
+    "shared": {
+        "loading": "Cargando...",
+        "error": "Error al obtener los datos. Por favor, inténtelo de nuevo.",
+        "noDataFound": "No se encontraron datos. Por favor, inténtelo de nuevo más tarde."
+    }
+}
