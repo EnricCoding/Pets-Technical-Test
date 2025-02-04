@@ -38,11 +38,6 @@ Fever Pets® is a platform that displays data about pets (dogs and cats in the c
 
 ## **Technical Details**
 
-### **Backend API**
-The application consumes the following endpoints:
-1. **List Pets**: [GET] `https://my-json-server.typicode.com/Feverup/fever_pets_data/pets`
-2. **Pet Details**: [GET] `https://my-json-server.typicode.com/Feverup/fever_pets_data/pets/<pet_id>`
-
 ### **Pet Structure**
 Each pet object includes:
 - `id`: Unique identifier
