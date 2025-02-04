@@ -76,7 +76,7 @@ The project uses the following libraries and tools:
 1. Clone the repository:
    ```bash
    git clone https://github.com/EnricCoding/Pets-Technical-Test.git
-   cd pets-project
+   cd Pets-Technical-Test
    ```
 
 2. Install dependencies:
